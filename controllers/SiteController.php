@@ -60,7 +60,26 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
+        if(!($user = \app\models\User::find()->one())) {
+            return $this->redirect(['register']);
+        }
         return $this->render('index');
+    }
+    
+    /**
+     * 初始化项目 注册管理员
+     */
+    public function actionRegister() {
+        if(($user = \app\models\User::find()->one())) {
+            return $this->redirect(['login']);
+        }
+        $model = new \app\models\RegisterForm();
+        if($model->load(Yii::$app->request->post()) && $model->save() ) {
+            return $this->redirect('login');
+        }
+        return $this->render('register',[
+            'model'=>$model
+        ]);
     }
 
     /**

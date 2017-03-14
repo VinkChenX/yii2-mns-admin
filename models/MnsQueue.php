@@ -5,7 +5,7 @@ namespace app\models;
 use Yii;
 
 /**
- * This is the model class for table "{{%tb_mns_queue}}".
+ * This is the model class for table "{{%mns_queue}}".
  *
  * @property integer $id
  * @property string $component_id 组件ID
