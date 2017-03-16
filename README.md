@@ -12,20 +12,26 @@ composer require vinkchen/yii2-mns-admin
 运行config下init.sql
 
 ##配置
-修改config/web下面以下配置：
+创建config/private.php 并添加以下内容 
 ```
-'components' => [
-    'request' => [
-        // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
-        'cookieValidationKey' => 'MjWtStooZHzIXeczatR2NIWo6qJFwy4Y',//需要修改 替换一个随机字符串
-    ],
-    'mns'=>[
-        'class'=>'yii\mns\Mns',
-        'accessKeyId'=>'从阿里云获取的accessKeyId',//需要修改
-        'AccessKeySecret'=>'从阿里云获取的accessKeySecret',//需要修改
-        'endpoint'=>'http://*****.mns.cn-hangzhou.aliyuncs.com/'//需要修改
-    ],
-]
+<?php
+/**
+ * 私有文件配置 不传到代码仓库里
+ */
+return [
+    'components' => [
+        'request' => [
+            // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
+            'cookieValidationKey' => 'aaWtStooZHzIXeczatR2NIWo6qJFwy4Y',//需要修改 替换成一个随机字符串
+        ],
+        'mns'=>[
+            'class'=>'yii\mns\Mns',
+            'accessKeyId'=>'从阿里云获取的accessKeyId',//需要修改 替换成从阿里云获取的accessKeyId
+            'AccessKeySecret'=>'从阿里云获取的accessKeySecret',//需要修改 替换成从阿里云获取的accessKeySecret
+            'endpoint'=>'http://*****.mns.cn-hangzhou.aliyuncs.com/'//需要修改 替换成从阿里云获取的enpoint
+        ],
+    ]
+];
 ```
 ##打开首页 会自动跳转到 site/register 注册初始管理员
 
