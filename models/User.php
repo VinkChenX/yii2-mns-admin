@@ -18,6 +18,12 @@ use Yii;
 class User extends \yii\db\ActiveRecord implements \yii\web\IdentityInterface
 {
     /**
+     * 密码
+     * @var string 
+     */
+    public $password;
+    
+    /**
      * @inheritdoc
      */
     public static function tableName()
@@ -96,9 +102,9 @@ class User extends \yii\db\ActiveRecord implements \yii\web\IdentityInterface
     
     public function rules() {
         return [
-            [['username','password_hash'],'required'],
+            [['username','password'],'required'],
             [['username'],'string','max'=>64,'encoding'=>'utf-8'],
-            [['password_hash'],'string','max'=>'255'],
+            [['password'],'string','max'=>64],
         ];
     }
     
@@ -118,5 +124,12 @@ class User extends \yii\db\ActiveRecord implements \yii\web\IdentityInterface
     public function setPassword($password)
     {
         $this->password_hash = Yii::$app->security->generatePasswordHash($password);
+    }
+    
+    public function attributeLabels() {
+        return [
+            'username'=>'用户名',
+            'password'=>'密码',
+        ];
     }
 }

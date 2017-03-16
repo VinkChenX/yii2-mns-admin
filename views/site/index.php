@@ -45,6 +45,16 @@ use yii\helpers\Url;
                     <a class="btn btn-default" href="<?=Url::to(['/mns-topic-subscription/create'])?>" target="_blank">添加 &raquo;</a>
                 </p>
             </div>
+            <div class="col-lg-4">
+                <h2>管理员</h2>
+
+                <p>管理员 查看及管理</p>
+
+                <p>
+                    <a class="btn btn-default" href="<?=Url::to(['/user/index'])?>" target="_blank">列表 &raquo;</a>
+                    <a class="btn btn-default" href="<?=Url::to(['/user/create'])?>" target="_blank">添加 &raquo;</a>
+                </p>
+            </div>
         </div>
 
     </div>
