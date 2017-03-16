@@ -30,6 +30,11 @@ return [
             'AccessKeySecret'=>'从阿里云获取的accessKeySecret',//需要修改 替换成从阿里云获取的accessKeySecret
             'endpoint'=>'http://*****.mns.cn-hangzhou.aliyuncs.com/'//需要修改 替换成从阿里云获取的enpoint
         ],
+        'db'=>[
+            'dsn' => 'mysql:host=127.0.0.1;dbname=yii2-mns-admin',//需要修改 替换成真实DB地址
+            'username' => 'root',//需要修改 替换成真实DB用户名
+            'password' => 'root',//需要修改 替换成真实DB密码
+        ]
     ]
 ];
 ```
