@@ -7,7 +7,7 @@ Yii2 Mns 服务管理平台
 
 ##安装 
 ```
-composer require vinkchen/yii2-mns-admin
+composer create-project vinkchen/yii2-mns-admin
 ```
 运行config下init.sql
 
