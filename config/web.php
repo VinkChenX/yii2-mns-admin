@@ -57,7 +57,7 @@ $config = [
 ];
 
 if(file_exists($privateConfigFile)) {
-    $config = array_merge($config, require $privateConfigFile);
+    $config = yii\helpers\ArrayHelper::merge($config, require $privateConfigFile);
 }
 
 if (YII_ENV_DEV) {
