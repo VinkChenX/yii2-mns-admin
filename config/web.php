@@ -1,7 +1,8 @@
 <?php
 
 $params = require(__DIR__ . '/params.php');
-
+$privateConfigFile = __DIR__ . '/private.php';//私有配置文件 如果有 则覆盖下面配置中的数据
+    
 $config = [
     'id' => 'basic',
     'language'=>'zh-cn',
@@ -54,6 +55,10 @@ $config = [
     ],
     'params' => $params,
 ];
+
+if(file_exists($privateConfigFile)) {
+    $config = array_merge($config, $privateConfigFile);
+}
 
 if (YII_ENV_DEV) {
     // configuration adjustments for 'dev' environment
