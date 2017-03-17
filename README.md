@@ -7,6 +7,7 @@ Yii2 Mns 服务管理平台
 
 ##安装 
 ```
+composer global require "fxp/composer-asset-plugin:^1.2.0"
 composer create-project vinkchen/yii2-mns-admin
 ```
 运行config下init.sql
